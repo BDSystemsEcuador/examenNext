@@ -1,0 +1,49 @@
+<block-ui>
+  <div *ngFor="let docente of docentes" class="card card-body mb-2">
+    <div class="row">
+      <div class="col-md-8">
+        <ul>
+          <li>
+            id: {{docente._id}}
+          </li>
+          <li>
+            nombres: {{docente.nombres}}
+          </li>
+          <li>
+            apellidos: {{docente.apellidos}}
+          </li>
+          <li>
+            materia: {{docente.materia}}
+          </li>
+          <li>
+            createdAt: {{docente.createdAt}}
+          </li>
+        </ul>
+        <button (click)="deleteDocente(docente._id)" class="btn btn-danger">
+          Delete
+        </button>
+        <button [routerLink]="['/docente/edit', docente._id]" class="btn btn-secondary">
+          Edit
+        </button>
+      </div>
+      <div class="col-md-4">
+        <img [src]="docente.profesion" class="card-img">
+      </div>
+    </div>
+  </div>
+<br>
+  <p>
+    Static self-closing alert that disappears after 20 seconds (refresh the page if it has already disappeared)
+  </p>
+  <ngb-alert *ngIf="!staticAlertClosed" (close)="staticAlertClosed = true">Check out our awesome new features!</ngb-alert>
+  
+  <hr/>
+  
+  <p>
+    Show a self-closing success message that disappears after 5 seconds.
+  </p>
+  <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+  <p>
+    <button class="btn btn-primary" (click)="changeSuccessMessage()">Change message</button>
+  </p>
+</block-ui>
