@@ -1,0 +1,28 @@
+<block-ui>
+  <H1 align="center">ASIGNACIONES DE MATERIAS</H1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Asignacion</th>
+        <th scope="col">Materia</th>
+        <th scope="col">Fecha de registro</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let asignacion of asignaciones">
+        <th scope="row">{{asignacion.asignacion}}</th>
+        <td>{{asignacion.materia}}</td>
+        <td>{{asignacion.createdAt}}</td>
+        <td><button [routerLink]="['/asignacion/edit', asignacion._id]" class="btn btn-secondary">
+          Edit
+        </button></td>
+        <td>        <button (click)="deleteAsignacion(asignacion._id)" class="btn btn-danger">
+          Delete
+        </button></td>
+      </tr>
+    </tbody>
+  </table>
+</block-ui>

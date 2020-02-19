@@ -6,12 +6,29 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/docente" routerLinkActive="active">Docentes</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/docente/create" routerLinkActive="active">Docente Create</a>
-      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" routerLinkActive="active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Docente
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/docente/create" routerLinkActive="active">Crear</a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/docente" routerLinkActive="active">Lista de docentes</a>
+
+        </div>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLinkActive="active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Materias
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/materia/create" routerLinkActive="active">Crear</a>
+  
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/materia" routerLinkActive="active">Lista de materias</a>
+  
+          </div>
     </ul>
   </div>
 </nav>

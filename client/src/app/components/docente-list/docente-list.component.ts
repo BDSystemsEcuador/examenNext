@@ -4,7 +4,6 @@ import { DocenteService } from 'src/app/services/docente.service';
 import { Docente } from '../../interfaces/Docente'
 
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
-import Swal from 'sweetalert2';
 
 
 @Component({
@@ -41,30 +40,12 @@ export class DocenteListComponent implements OnInit {
 
   deleteDocente(id: string): void {
 
-    Swal.fire({
-      title: 'Eliminar Estudiante',
-      text:'¿Estás seguro?',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Eliminar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
-      if (result.value) {
+   
         this.docenteService.deleteDocente(id)
         .subscribe(
           res => {
             console.log(res);
             this.getDocentes();
           });
-        Swal.fire(
-          'Eliminado',
-          '',
-          'success'
-        )
-      }
-    })
-  }
-
+    }
 }

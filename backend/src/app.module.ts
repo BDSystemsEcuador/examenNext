@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { MongooseModule } from "@nestjs/mongoose";
 import { DocenteModule } from './docente/docente.module';
 import { MateriaModule } from './materia/materia.module';
+import { AsignacionModule } from './asignacion/asignacion.module';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { MateriaModule } from './materia/materia.module';
       useCreateIndex: true
     }),
     DocenteModule,
-    MateriaModule
+    MateriaModule,
+    AsignacionModule
   ],
   controllers: [AppController],
   providers: [AppService],

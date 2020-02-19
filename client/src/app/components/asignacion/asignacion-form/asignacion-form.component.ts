@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Docente } from 'src/app/interfaces/Docente';
-import { DocenteService } from 'src/app/services/docente.service';
+import { Asignacion } from 'src/app/interfaces/Asignacion';
+import { AsignacionService } from 'src/app/services/asignacion.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-docente-form',
-  templateUrl: './docente-form.component.html',
-  styleUrls: ['./docente-form.component.css']
+  selector: 'app-asignacion-form',
+  templateUrl: './asignacion-form.component.html',
+  styleUrls: ['./asignacion-form.component.css']
 })
-export class DocenteFormComponent implements OnInit {
+export class AsignacionFormComponent implements OnInit {
 
-  docente: Docente = {
+  asignacion: Asignacion = {
     cedula: '',
     nombres: '',
     apellidos: '',
@@ -20,7 +20,7 @@ export class DocenteFormComponent implements OnInit {
   edit: boolean = false;
 
   constructor(
-    private docenteService: DocenteService,
+    private asignacionService: AsignacionService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) { }
@@ -28,11 +28,11 @@ export class DocenteFormComponent implements OnInit {
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
     if (params.id) {
-      this.docenteService.getDocente(params.id)
+      this.asignacionService.getAsignacion(params.id)
         .subscribe(
           res => {
             console.log(res);
-            this.docente = res;
+            this.asignacion = res;
             this.edit = true;
           },
           err => console.log(err)
@@ -40,8 +40,8 @@ export class DocenteFormComponent implements OnInit {
     }
   }
 
-  submitDocente() {
-    this.docenteService.createDocente(this.docente)
+  submitAsignacion() {
+    this.asignacionService.createAsignacion(this.asignacion)
       .subscribe(
         res => {
           console.log(res);
@@ -51,13 +51,13 @@ export class DocenteFormComponent implements OnInit {
       )
   }
 
-  updateDocente() {
-    delete this.docente.createdAt;
-    this.docenteService.updateDocente(this.docente._id, this.docente)
+  updateAsignacion() {
+    delete this.asignacion.createdAt;
+    this.asignacionService.updateAsignacion(this.asignacion._id, this.asignacion)
       .subscribe(
         res => {
           console.log(res);
-          this.router.navigate(['/docente'])
+          this.router.navigate(['/asignacion'])
         },
         err => console.log(err)
       )

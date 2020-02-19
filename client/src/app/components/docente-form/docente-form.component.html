@@ -3,16 +3,16 @@
     <div class="card card-body">
 
       <form (submit)="edit ? updateDocente() : submitDocente()">
+        <div class="form-group">
+          <input type="text" name="cedula" [(ngModel)]="docente.cedula" class="form-control" placeholder="Cédula">
+        </div>
+        <div class="form-group">
+          <input type="text" name="nombres" [(ngModel)]="docente.nombres" class="form-control" placeholder="Nombres" autofocus>
+        </div>
+        <div class="form-group">
+          <input type="text" name="apellidos" [(ngModel)]="docente.apellidos" class="form-control" placeholder="Apellidos">
+        </div>
 
-        <div class="form-group">
-          <input type="text" name="nombres" [(ngModel)]="docente.nombres" class="form-control" placeholder="Docente" autofocus>
-        </div>
-        <div class="form-group">
-          <input type="text" name="apellidos" [(ngModel)]="docente.apellidos" class="form-control" placeholder="apellidos">
-        </div>
-        <div class="form-group">
-          <input type="text" name="materia" [(ngModel)]="docente.materia" class="form-control" placeholder="materia">
-        </div>
         <div class="form-group">
           <input type="text" name="profesion" [(ngModel)]="docente.profesion" class="form-control" placeholder="Profesión">
         </div>

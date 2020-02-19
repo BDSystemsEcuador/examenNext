@@ -1,8 +1,8 @@
 import { Schema } from "mongoose";
 
-export const MateriaSchema = new Schema({
-    nombre: String,
+export const AsignacionSchema = new Schema({
+    docente: String,
+    materia: String,
     horas: String,
-    estado: Boolean,
     createdAt: { type: Date, default: Date.now }
 });

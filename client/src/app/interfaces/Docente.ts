@@ -1,8 +1,8 @@
 export interface Docente {
     _id?: string;
+    cedula: string;
     nombres: string;
     apellidos: string;
-    materia: string;
     profesion: string;
     createdAt?: Date;
 }
