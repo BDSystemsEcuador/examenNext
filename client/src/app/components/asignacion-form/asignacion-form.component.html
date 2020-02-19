@@ -3,9 +3,11 @@
     <div class="card card-body">
 
       <form (submit)="edit ? updateAsignacion() : submitAsignacion()">
-        <div class="form-group">
-          <input type="text" name="docente" [(ngModel)]="asignacion.docente" class="form-control" placeholder="Docente">
-        </div>
+        <select name="docente" [(ngModel)]="asignacion.docente" class="custom-select">
+          <option selected>Seleccione el Docente</option>
+          
+          <option *ngFor="let docente of docentes" value={{docente.nombres}}>{{docente.nombres}}</option>
+        </select>
         <div class="form-group">
           <input type="text" name="materia" [(ngModel)]="asignacion.materia" class="form-control" placeholder="Materia" autofocus>
         </div>

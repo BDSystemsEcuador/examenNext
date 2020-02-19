@@ -10,7 +10,8 @@ import { MateriaFormComponent } from './components/materia-form/materia-form.com
 import { MateriaListComponent } from './components/materia-list/materia-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BlockUIModule } from 'ng-block-ui';
-
+import { AsignacionFormComponent } from './components/asignacion-form/asignacion-form.component';
+import { AsignacionListComponent } from './components/asignacion-list/asignacion-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,9 @@ import { BlockUIModule } from 'ng-block-ui';
     DocenteListComponent,
     MateriaFormComponent,
     NavbarComponent,
-    MateriaListComponent
+    MateriaListComponent,
+    AsignacionFormComponent,
+    AsignacionListComponent
   ],
   imports: [
     BrowserModule,

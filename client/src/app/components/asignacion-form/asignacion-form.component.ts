@@ -2,11 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Asignacion } from 'src/app/interfaces/Asignacion';
 import { AsignacionService } from 'src/app/services/asignacion.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Docente } from 'src/app/interfaces/Docente';
+import { DocenteService } from 'src/app/services/docente.service';
+import { Materia } from 'src/app/interfaces/Materia';
+import { MateriaService } from 'src/app/services/materia.service';
 
 @Component({
   selector: 'app-asignacion-form',
   templateUrl: './asignacion-form.component.html',
-  styleUrls: ['./asignacion-form.component.css']
+  styleUrls: ['./asignacion-form.component.css'],
+  providers:[MateriaService, DocenteService]
 })
 export class AsignacionFormComponent implements OnInit {
 
@@ -20,7 +25,9 @@ export class AsignacionFormComponent implements OnInit {
   constructor(
     private asignacionService: AsignacionService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private materiaService:MateriaService,
+    private docenteService:DocenteService,
   ) { }
 
   ngOnInit() {
@@ -37,13 +44,13 @@ export class AsignacionFormComponent implements OnInit {
         )
     }
   }
-
+  
   submitAsignacion() {
     this.asignacionService.createAsignacion(this.asignacion)
       .subscribe(
         res => {
           console.log(res);
-          this.router.navigate(['/']);
+          this.router.navigate(['/asignacion']);
         },
         err => console.log(err)
       )
