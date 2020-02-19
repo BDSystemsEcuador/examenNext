@@ -12,7 +12,7 @@ export class AsignacionService {
 
   constructor(private http: HttpClient) { }
 
-  getAsignacions(): Observable<Asignacion[]>{
+  getAsignaciones(): Observable<Asignacion[]>{
     return this.http.get<Asignacion[]>(`${this.BASE_URL}/asignacion`);
   }
 

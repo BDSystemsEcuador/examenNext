@@ -11,10 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AsignacionFormComponent implements OnInit {
 
   asignacion: Asignacion = {
-    cedula: '',
-    nombres: '',
-    apellidos: '',
-    profesion: ''
+    docente: '',
+    materia: ''
   };
 
   edit: boolean = false;

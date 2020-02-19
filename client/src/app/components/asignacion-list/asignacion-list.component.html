@@ -3,7 +3,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">Asignacion</th>
+        <th scope="col">Docente</th>
         <th scope="col">Materia</th>
         <th scope="col">Fecha de registro</th>
         <th scope="col">Editar</th>
@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let asignacion of asignaciones">
-        <th scope="row">{{asignacion.asignacion}}</th>
+        <th scope="row">{{asignacion.docente}}</th>
         <td>{{asignacion.materia}}</td>
         <td>{{asignacion.createdAt}}</td>
         <td><button [routerLink]="['/asignacion/edit', asignacion._id]" class="btn btn-secondary">
